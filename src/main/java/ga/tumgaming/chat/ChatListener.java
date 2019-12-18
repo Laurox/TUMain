@@ -50,19 +50,16 @@ public class ChatListener implements Listener {
                 AtomicReference<List<Entity>> nearby = new AtomicReference<List<Entity>>();
                 Bukkit.getScheduler().callSyncMethod(TUMain.getPlugin(), () -> {
                     nearby.set(player.getNearbyEntities(25, 25, 25));
+                    nearby.get().forEach((entity) -> {
+                        if(entity instanceof Player) {
+                            entity.sendMessage(FileManager.getMessage("Chat.listener.local")
+                                    .replace("%player%", player.getDisplayName())
+                                    .replace("%message%", message)
+                            );
+                        }
+                    });
                     return null;
                 });
-
-                nearby.get().forEach((entity) -> {
-                    if(entity instanceof Player) {
-                        entity.sendMessage(FileManager.getMessage("Chat.listener.local")
-                                .replace("%player%", player.getDisplayName())
-                                .replace("%message%", message)
-                        );
-                    }
-                });
-
-
                 break;
         }
 

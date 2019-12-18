@@ -5,6 +5,8 @@ import ga.tumgaming.chat.ChatListener;
 import ga.tumgaming.files.FileManager;
 import ga.tumgaming.listeners.JoinListener;
 import ga.tumgaming.listeners.QuitListener;
+import ga.tumgaming.msg.MessageCommand;
+import ga.tumgaming.msg.RespondCommand;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
@@ -33,6 +35,9 @@ public class TUMain extends JavaPlugin {
 		registerEvents();
 
 		getCommand("chat").setExecutor(new ChatCommand());
+		getCommand("message").setExecutor(new MessageCommand());
+		getCommand("respond").setExecutor(new RespondCommand());
+
 
 		log("§aSuccessfully loaded TUMain");
 	}

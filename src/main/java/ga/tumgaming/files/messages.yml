@@ -30,3 +30,8 @@ Chat:
   command:
     list:
     switch:
+Message:
+  # %player%, %message%
+  send: "&dTo %player%&7: %message%"
+  # %player%, %message%
+  receive: "&dFrom %player%&7: %message%"

@@ -12,3 +12,22 @@ commands:
       description: let you change the current chat
       usage: /<command> <CHAT>
       permission: tum.chat
+   message:
+      description: sends a player a personal message
+      usage: /<command> <player> <message>
+      permission: tum.message
+      aliases:
+         - msg
+         - tell
+         - w
+         - whisper
+         - m
+         - t
+   respond:
+      description: respond to a prior message
+      usage: /<command> <message>
+      permission: tum.message
+      aliases:
+         - r
+         - answer
+         - reply

@@ -10,7 +10,7 @@
 # === === ===
 
 JoinListener:
-  header: "&You are playing on &e&lTUMine"
+  header: "&bYou are playing on &e&lTUMine"
   footer: "&aRanks, Booster and MORE in our &c&lSHOP"
   # %prefix%, %player%
   prefix: "%prefix% &7| %player%"

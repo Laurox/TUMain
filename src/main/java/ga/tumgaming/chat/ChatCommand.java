@@ -31,7 +31,7 @@ public class ChatCommand implements CommandExecutor, TabCompleter {
                 for (ChatType ct : chatTypes) {
                     if(currentChat.equalsIgnoreCase(ct.getClearName()) && ct.isChooseable()) {
                         sb.append("§e").append(ct.getClearName()).append(" ");
-                    } else if(ct.isChooseable() && !ct.getClearName().equalsIgnoreCase("Team")) {
+                    } else if(ct.isChooseable()) {
                         sb.append("§7").append(ct.getClearName()).append(" ");
                     }
                 }
@@ -41,9 +41,12 @@ public class ChatCommand implements CommandExecutor, TabCompleter {
             } else if (args.length == 1) {
                 String chat = args[0];
                 if(ChatType.matches(chat) && ChatType.getType(chat).isChooseable()) {
-                    if(ChatType.getType(chat).equals(ChatType.TEAM) && !player.hasPermission("tum.teamchat")) return false;
+                    if(ChatType.getType(chat).equals(ChatType.TEAM) && !player.hasPermission("tum.teamchat")) {
+                        player.sendMessage("Im sorry! You are not permitted to do that.");
+                        return false;
+                    }
                     current.put(player, chat);
-                    player.sendMessage(Chat.PREFIX + "you changed to chat " + chat);
+                    player.sendMessage(Chat.PREFIX + "You changed to chat " + chat);
                     return true;
                 }
                 return false;

@@ -76,7 +76,7 @@ public class FileManager {
 
                 // Comments start with #
                 if(!line.startsWith("#")) {
-                    if(line.isBlank() || line.isEmpty());
+                    if(line.isEmpty());
                     else {
                         if(line.startsWith("// START //")) broadcast = "";
                         else if(line.startsWith("// END //")) {

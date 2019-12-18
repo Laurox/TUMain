@@ -17,9 +17,10 @@ public class JoinListener implements Listener {
         Player player = event.getPlayer();
 
         List<String> broadcasts = FileManager.getBroadcasts();
-
-        Methods.sendCenteredMessage(player, broadcasts.get(0));
-        Methods.sendCenteredMessage(player, "This is a test");
+        String[] strings = broadcasts.get(0).split("\n");
+        for (String s: strings) {
+            Methods.sendCenteredMessage(player, s);
+        }
 
         // Chat Configs
         ChatCommand.current.put(player, "global");

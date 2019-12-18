@@ -36,6 +36,7 @@ public class JoinListener implements Listener {
         event.setJoinMessage(FileManager.getMessage("JoinListener.broadcast")
                 .replace("%player%", player.getDisplayName())
         );
+
     }
 
 }

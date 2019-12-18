@@ -17,6 +17,9 @@ public class FileManager {
     public static void setupMessageFile() {
         messageFile = new File(TUMain.getPlugin().getDataFolder(), "messages.yml");
 
+        if(messageFile.exists())
+            messageFile.delete();
+
         if (!messageFile.exists()) {
             try {
                 InputStream stream = FileManager.class.getResourceAsStream("messages.yml");

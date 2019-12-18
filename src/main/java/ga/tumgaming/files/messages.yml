@@ -15,10 +15,10 @@ JoinListener:
   # %prefix%, %player%
   prefix: "%prefix% &7| %player%"
   # %player%
-  broadcast: "&e%player% &7joined the game"
+  broadcast: "&e%player% &7joined the server"
 QuitListener:
   # %player%
-  broadcast: "&e%player% &7left the game"
+  broadcast: "&e%player% &7left the server"
 Chat:
   listener:
     global: "&7[&eGlobal&7] %player%&7: &e%message%"

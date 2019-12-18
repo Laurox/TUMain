@@ -39,12 +39,13 @@ public class ChatListener implements Listener {
                 player.sendMessage("Dieser Chat wurde noch nicht konfiguriert");
                 break;
             case LOCAL:
+                player.sendMessage(FileManager.getMessage("Chat.listener.local")
+                        .replace("%player%", player.getDisplayName())
+                        .replace("%message%", message)
+                );
+
                 List<Entity> nearby = player.getNearbyEntities(50, 256, 50);
                 nearby.forEach((Player) -> {
-                    player.sendMessage(FileManager.getMessage("Chat.listener.local")
-                            .replace("%player%", player.getDisplayName())
-                            .replace("%message%", message)
-                    );
                     Player.sendMessage(FileManager.getMessage("Chat.listener.local")
                             .replace("%player%", player.getDisplayName())
                             .replace("%message%", message)

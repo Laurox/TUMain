@@ -19,8 +19,8 @@ public class RespondCommand implements CommandExecutor {
             if(recipient == null) return false;
 
             StringBuilder stringBuilder = new StringBuilder();
-            for (int i = 1; i < args.length; i++) {
-                stringBuilder.append(args[i]);
+            for (int i = 0; i < args.length; i++) {
+                stringBuilder.append(args[i]).append(" ");
             }
             String message = stringBuilder.toString();
 

@@ -1,5 +1,6 @@
 package ga.tumgaming.chat;
 
+import ga.tumgaming.TUMain;
 import ga.tumgaming.files.FileManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
@@ -8,7 +9,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class ChatListener implements Listener {
 
@@ -44,8 +47,13 @@ public class ChatListener implements Listener {
                         .replace("%message%", message)
                 );
 
-                List<Entity> nearby = player.getNearbyEntities(25, 25, 25);
-                nearby.forEach((entity) -> {
+                AtomicReference<List<Entity>> nearby = new AtomicReference<List<Entity>>();
+                Bukkit.getScheduler().callSyncMethod(TUMain.getPlugin(), () -> {
+                    nearby.set(player.getNearbyEntities(25, 25, 25));
+                    return null;
+                });
+
+                nearby.get().forEach((entity) -> {
                     if(entity instanceof Player) {
                         entity.sendMessage(FileManager.getMessage("Chat.listener.local")
                                 .replace("%player%", player.getDisplayName())
@@ -53,6 +61,8 @@ public class ChatListener implements Listener {
                         );
                     }
                 });
+
+
                 break;
         }
 

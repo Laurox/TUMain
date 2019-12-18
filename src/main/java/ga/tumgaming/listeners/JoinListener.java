@@ -1,6 +1,5 @@
 package ga.tumgaming.listeners;
 
-import ga.tumgaming.TUMain;
 import ga.tumgaming.chat.ChatCommand;
 import ga.tumgaming.files.FileManager;
 import org.bukkit.entity.Player;

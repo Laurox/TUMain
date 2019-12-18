@@ -1,0 +1,17 @@
+# this file lets you configure the messages sent as Server Broadcasts
+# to configure the Settings check broadcastConfig.yml
+# each broadcasts starts with an empty line and ends with one
+# in between 2 broadcasts no further blank line is needed
+# at the end of the last broadcast there has to be a blank line
+
+// START //
+Broadcast 1
+Broadcast 1
+Broadcast 1
+Broadcast 1
+// END //
+// START //
+Broadcast 2
+Broadcast 2
+Broadcast 2
+// END //

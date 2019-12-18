@@ -14,6 +14,8 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class TUMain extends JavaPlugin {
@@ -31,6 +33,7 @@ public class TUMain extends JavaPlugin {
 
 		// VERY important, contains ALL customizable messages TUMain uses
 		FileManager.setupMessageFile();
+		FileManager.loadBroadcasts();
 
 		registerEvents();
 

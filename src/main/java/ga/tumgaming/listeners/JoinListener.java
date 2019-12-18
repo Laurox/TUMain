@@ -7,11 +7,17 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
+import java.util.List;
+
 public class JoinListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
+
+        List<String> broadcasts = FileManager.getBroadcasts();
+
+        player.sendMessage(broadcasts.toString());
 
         // Chat Configs
         ChatCommand.current.put(player, "global");

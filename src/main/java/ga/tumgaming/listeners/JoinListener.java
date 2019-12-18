@@ -26,7 +26,8 @@ public class JoinListener implements Listener {
         player.setPlayerListHeaderFooter(header, footer);
 
         // set tablist name
-        String primaryGroup = TUMain.getPermissions().getPrimaryGroup(player);
+        // String primaryGroup = TUMain.getPermissions().getPrimaryGroup(player);
+        String primaryGroup = "GROUP";
         player.setPlayerListName(FileManager.getMessage("JoinListener.prefix")
                 .replace("%player%", player.getDisplayName())
                 .replace("%prefix%", primaryGroup)

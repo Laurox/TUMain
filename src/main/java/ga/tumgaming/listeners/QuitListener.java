@@ -16,7 +16,7 @@ public class QuitListener implements Listener {
         ChatCommand.current.remove(player);
 
         event.setQuitMessage(FileManager.getMessage("QuitListener.broadcast")
-                .replace("%player", player.getDisplayName())
+                .replace("%player%", player.getDisplayName())
         );
     }
 }

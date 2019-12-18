@@ -45,11 +45,13 @@ public class ChatListener implements Listener {
                 );
 
                 List<Entity> nearby = player.getNearbyEntities(25, 25, 25);
-                nearby.forEach((Player) -> {
-                    Player.sendMessage(FileManager.getMessage("Chat.listener.local")
-                            .replace("%player%", player.getDisplayName())
-                            .replace("%message%", message)
-                    );
+                nearby.forEach((entity) -> {
+                    if(entity instanceof Player) {
+                        entity.sendMessage(FileManager.getMessage("Chat.listener.local")
+                                .replace("%player%", player.getDisplayName())
+                                .replace("%message%", message)
+                        );
+                    }
                 });
                 break;
         }

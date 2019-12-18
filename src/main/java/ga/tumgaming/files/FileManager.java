@@ -76,13 +76,14 @@ public class FileManager {
 
                 // Comments start with #
                 if (!line.startsWith("#")) {
+
                     if (line.isEmpty()) ;
                     else {
                         if (line.startsWith("// START //")) broadcast = "";
                         else if (line.startsWith("// END //")) {
                             result.add(broadcast);
                         } else {
-                            broadcast += iterator.next() + "\n";
+                            broadcast += line + "\n";
                         }
                     }
                 }

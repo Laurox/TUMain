@@ -39,6 +39,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
             );
 
             messageMap.put(recipient, player);
+            return true;
         }
         return false;
     }

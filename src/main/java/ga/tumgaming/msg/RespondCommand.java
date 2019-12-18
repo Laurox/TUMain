@@ -34,6 +34,7 @@ public class RespondCommand implements CommandExecutor {
             );
 
             MessageCommand.messageMap.put(recipient, player);
+            return true;
         }
         return false;
     }

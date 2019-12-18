@@ -30,7 +30,7 @@ public class MessageCommand implements CommandExecutor, TabCompleter {
             String message = stringBuilder.toString();
 
             player.sendMessage(FileManager.getMessage("Message.send")
-                    .replace("%player%", player.getDisplayName())
+                    .replace("%player%", recipient.getDisplayName())
                     .replace("%message%", message)
             );
             recipient.sendMessage(FileManager.getMessage("Message.receive")

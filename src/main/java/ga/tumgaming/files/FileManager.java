@@ -25,7 +25,7 @@ public class FileManager {
     public static void setupMessageFile() {
         messageFile = new File(TUMain.getPlugin().getDataFolder(), "messages.yml");
 
-        if(messageFile.exists())
+        if (messageFile.exists())
             messageFile.delete();
 
         if (!messageFile.exists()) {
@@ -46,7 +46,7 @@ public class FileManager {
     public static void loadBroadcasts() {
         broadcastsText = new File(TUMain.getPlugin().getDataFolder(), "messages.yml");
 
-        if(broadcastsText.exists())
+        if (broadcastsText.exists())
             broadcastsText.delete();
 
         if (!broadcastsText.exists()) {
@@ -75,11 +75,11 @@ public class FileManager {
                 String line = iterator.next();
 
                 // Comments start with #
-                if(!line.startsWith("#")) {
-                    if(line.isEmpty());
+                if (!line.startsWith("#")) {
+                    if (line.isEmpty()) ;
                     else {
-                        if(line.startsWith("// START //")) broadcast = "";
-                        else if(line.startsWith("// END //")) {
+                        if (line.startsWith("// START //")) broadcast = "";
+                        else if (line.startsWith("// END //")) {
                             result.add(broadcast);
                         } else {
                             broadcast += iterator.next() + "\n";

@@ -2,6 +2,7 @@ package ga.tumgaming.listeners;
 
 import ga.tumgaming.chat.ChatCommand;
 import ga.tumgaming.files.FileManager;
+import ga.tumgaming.util.Methods;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,7 +18,7 @@ public class JoinListener implements Listener {
 
         List<String> broadcasts = FileManager.getBroadcasts();
 
-        player.sendMessage(broadcasts.toString());
+        Methods.sendCenteredMessage(player, broadcasts.get(0));
 
         // Chat Configs
         ChatCommand.current.put(player, "global");

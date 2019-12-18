@@ -81,7 +81,7 @@ public class FileManager {
                     else {
                         if (line.startsWith("// START //")) broadcast = "";
                         else if (line.startsWith("// END //")) {
-                            result.add(broadcast);
+                            result.add(Chat.translateAlternatives(broadcast));
                         } else {
                             broadcast += line + "\n";
                         }

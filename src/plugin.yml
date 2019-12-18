@@ -1,12 +1,14 @@
-main: ga.tumgaming.tumine.tuminetemplate.tuminetemplate
-name: TUMineTemplate
-prefix: TUMineTemplate
+main: ga.tumgaming.TUMain
+name: TUMain
+prefix: TUMain
 author: GeneralMine, HrMoritz, Laurox
 version: ${project.version}
-api-version: 1.14
+api-version: "1.14"
 depend:
    - Vault
 
 commands:
-   template:
-      description: Overview of your templates
+   chat:
+      description: let you change the current chat
+      usage: /<command> <CHAT>
+      permission: tum.chat

@@ -1,0 +1,32 @@
+# Message File | here are ALL editable messages contained
+# === === ===
+# DO NOT CHANGE THE KEYS
+# ALL AMIABLE VARIABLES ARE WRITTEN ABOVE EACH METHOD
+# === === ===
+# Colors:
+# Usable-Format: §x | &x
+# Names and Values according to:
+# https://www.digminecraft.com/lists/color_list_pc.php
+# === === ===
+
+JoinListener:
+  header: "&You are playing on &e&lTUMine"
+  footer: "&aRanks, Booster and MORE in our &c&lSHOP"
+  # %prefix%, %player%
+  prefix: "%prefix% &7| %player%"
+  # %player%
+  broadcast: "&e%player% &7joined the game"
+QuitListener:
+  # %player%
+  broadcast: "&e%player% &7left the game"
+Chat:
+  listener:
+    global: "&7[&eGlobal&7] %player%&7: &e%message%"
+    local: "&7[&fLocal&7] %player%&7: &f%message%"
+    team: "&7[&9Team&7] %player%&7: &9%message%"
+    # %region%
+    region: "&7[&f%region%&7] %player%&7: &f%message%"
+    race: "&7[&aRace&7] %player%: %message%"
+  command:
+    list:
+    switch:

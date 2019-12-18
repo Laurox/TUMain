@@ -1,7 +1,6 @@
-package ga.tumgaming.tumine.tuminetemplate.util;
+package ga.tumgaming.util;
 
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import java.io.File;

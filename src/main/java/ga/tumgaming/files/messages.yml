@@ -32,6 +32,6 @@ Chat:
     switch:
 Message:
   # %player%, %message%
-  send: "&dTo %player%&7: %message%"
+  send: "&dTo &a%player%&7: %message%"
   # %player%, %message%
-  receive: "&dFrom %player%&7: %message%"
+  receive: "&dFrom &a%player%&7: %message%"

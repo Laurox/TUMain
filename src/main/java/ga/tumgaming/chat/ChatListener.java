@@ -9,7 +9,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -42,6 +41,7 @@ public class ChatListener implements Listener {
                 player.sendMessage("Dieser Chat wurde noch nicht konfiguriert");
                 break;
             case LOCAL:
+
                 player.sendMessage(FileManager.getMessage("Chat.listener.local")
                         .replace("%player%", player.getDisplayName())
                         .replace("%message%", message)
@@ -51,7 +51,7 @@ public class ChatListener implements Listener {
                 Bukkit.getScheduler().callSyncMethod(TUMain.getPlugin(), () -> {
                     nearby.set(player.getNearbyEntities(25, 25, 25));
                     nearby.get().forEach((entity) -> {
-                        if(entity instanceof Player) {
+                        if (entity instanceof Player) {
                             entity.sendMessage(FileManager.getMessage("Chat.listener.local")
                                     .replace("%player%", player.getDisplayName())
                                     .replace("%message%", message)

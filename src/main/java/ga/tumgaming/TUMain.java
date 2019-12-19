@@ -33,7 +33,7 @@ public class TUMain extends JavaPlugin {
 		FileManager.setupMessageFile();
 		FileManager.loadBroadcasts();
 
-		Broadcaster.startScheduler();
+		new Broadcaster().startScheduler();
 
 		registerEvents();
 

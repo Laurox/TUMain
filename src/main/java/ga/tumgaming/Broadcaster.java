@@ -6,8 +6,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
-import java.util.List;
-
 public class Broadcaster {
 
     private static int intervall = 10;

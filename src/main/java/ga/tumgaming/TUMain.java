@@ -33,6 +33,8 @@ public class TUMain extends JavaPlugin {
 		FileManager.setupMessageFile();
 		FileManager.loadBroadcasts();
 
+		Broadcaster.startScheduler();
+
 		registerEvents();
 
 		getCommand("chat").setExecutor(new ChatCommand());

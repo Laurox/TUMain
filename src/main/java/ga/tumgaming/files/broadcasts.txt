@@ -1,6 +1,6 @@
 # this file lets you configure the messages sent as Server Broadcasts
 # to configure the Settings check broadcastConfig.yml
-# each broadcasts starts with // START // and ends with // END //
+# each broadcasts starts with <--START--> and ends with <--END-->
 # An example is given below
 #
 # Colors: §x | &x

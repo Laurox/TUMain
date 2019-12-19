@@ -1,7 +1,7 @@
 # Message File | here are ALL editable messages contained
 # === === ===
 # DO NOT CHANGE THE KEYS
-# ALL AMIABLE VARIABLES ARE WRITTEN ABOVE EACH METHOD
+# ALL AVAILABLE VARIABLES ARE WRITTEN ABOVE EACH METHOD
 # === === ===
 # Colors:
 # Usable-Format: §x | &x
@@ -28,8 +28,8 @@ Chat:
     region: "&7[&f%region%&7] %player%&7: &f%message%"
     race: "&7[&aRace&7] %player%: %message%"
   command:
-    list:
-    switch:
+    list: "&8[&9TUM&7ain&8]&7 Possible Chats&8: "
+    switch: "&8[&9TUM&7ain&8]&7 You switched to &a%chat%"
 Message:
   # %player%, %message%
   send: "&dTo &a%player%&7: %message%"

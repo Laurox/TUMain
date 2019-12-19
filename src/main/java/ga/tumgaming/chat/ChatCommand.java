@@ -1,6 +1,6 @@
 package ga.tumgaming.chat;
 
-import ga.tumgaming.util.Chat;
+import ga.tumgaming.files.FileManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -22,11 +22,11 @@ public class ChatCommand implements CommandExecutor, TabCompleter {
             Player player = (Player) commandSender;
 
             if (args.length == 0) {
-                player.sendMessage(Chat.PREFIX + "These are all possible chats:");
+                String prompt = FileManager.getMessage("Chat.command.list");
 
                 String currentChat = current.get(player);
                 ChatType[] chatTypes = ChatType.getAll();
-                StringBuilder sb = new StringBuilder();
+                StringBuilder sb = new StringBuilder(prompt);
 
                 for (ChatType ct : chatTypes) {
                     if(currentChat.equalsIgnoreCase(ct.getClearName()) && ct.isChooseable()) {
@@ -46,7 +46,9 @@ public class ChatCommand implements CommandExecutor, TabCompleter {
                         return false;
                     }
                     current.put(player, chat);
-                    player.sendMessage(Chat.PREFIX + "You changed to chat " + chat);
+                    player.sendMessage(FileManager.getMessage("Chat.command.switch")
+                            .replace("%chat%", chat)
+                    );
                     return true;
                 }
                 return false;

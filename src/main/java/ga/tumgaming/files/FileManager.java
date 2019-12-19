@@ -8,9 +8,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -79,8 +77,8 @@ public class FileManager {
 
                     if (line.isEmpty()) ;
                     else {
-                        if (line.startsWith("// START //")) broadcast = "";
-                        else if (line.startsWith("// END //")) {
+                        if (line.startsWith("<--START-->")) broadcast = "";
+                        else if (line.startsWith("<--END-->")) {
                             result.add(Chat.translateAlternatives(broadcast));
                         } else {
                             broadcast += line + "\n";

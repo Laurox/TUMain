@@ -11,7 +11,7 @@ import java.util.Arrays;
 public class Broadcaster {
 
     private static int intervall = 10;
-    private static boolean sound;
+    private static boolean sound = true;
 
     private static String[] broadcasts;
 
@@ -28,13 +28,14 @@ public class Broadcaster {
                 int rnd = (int) Math.round(Math.random()*(broadcasts.length-1));
                 String[] strings = broadcasts[rnd].split("\n");
                 for (Player player : Bukkit.getOnlinePlayers()) {
+                    if(sound)
+                        player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, (float) 0.2, (float) 0.5);
+
+                    player.sendMessage("");
                     for (String s: strings) {
-                        if(sound)
-                            player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, (float) 0.2, (float) 0.5);
-                        player.sendMessage("");
                         Methods.sendCenteredMessage(player, s);
-                        player.sendMessage("");
                     }
+                    player.sendMessage("");
                 }
 
             }

@@ -26,7 +26,8 @@ public class ChatCommand implements CommandExecutor, TabCompleter {
 
                 String currentChat = current.get(player);
                 ChatType[] chatTypes = ChatType.getAll();
-                StringBuilder sb = new StringBuilder(prompt);
+                StringBuilder sb = new StringBuilder();
+                sb.append(prompt);
 
                 for (ChatType ct : chatTypes) {
                     if(currentChat.equalsIgnoreCase(ct.getClearName()) && ct.isChooseable()) {

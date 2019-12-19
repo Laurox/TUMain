@@ -5,9 +5,9 @@
 #
 # Colors: §x | &x
 
-// START //
+<--START-->
 &rThis is an Example Broadcast
 &eThis line should be yellow
 &lThis line is bold
 &rThis line is the last one
-// END //
+<--END-->

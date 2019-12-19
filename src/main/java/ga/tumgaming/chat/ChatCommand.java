@@ -31,9 +31,9 @@ public class ChatCommand implements CommandExecutor, TabCompleter {
 
                 for (ChatType ct : chatTypes) {
                     if(currentChat.equalsIgnoreCase(ct.getClearName()) && ct.isChooseable()) {
-                        sb.append("§e").append(ct.getClearName()).append(" ");
+                        sb.append("§a").append(ct.getClearName()).append(" ");
                     } else if(ct.isChooseable()) {
-                        sb.append("§7").append(ct.getClearName()).append(" ");
+                        sb.append("§c").append(ct.getClearName()).append(" ");
                     }
                 }
 
